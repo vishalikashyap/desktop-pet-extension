@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "A small animated pet that walks around your web pages.",
   "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "Desktop Pet"
