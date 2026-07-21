@@ -7,6 +7,7 @@
     pet: 'cat',
     size: 'medium',
     positionMode: 'bottom-left',
+    walkDirection: 'random',
     posX: null,
     posY: null,
     opacity: 1,
@@ -122,7 +123,17 @@
   }
 
   function pickWalkTarget() {
-    targetX = clampX(Math.random() * window.innerWidth);
+    const maxX = window.innerWidth - petWidth;
+    const stride = 120 + Math.random() * 260;
+
+    if (cfg.walkDirection === 'ltr') {
+      targetX = clampX(posX + stride);
+    } else if (cfg.walkDirection === 'rtl') {
+      targetX = clampX(posX - stride);
+    } else {
+      targetX = clampX(Math.random() * maxX);
+    }
+
     targetY = isEdgeMode(cfg.positionMode) ? edgeYFor(cfg.positionMode) : clampY(Math.random() * window.innerHeight);
   }
 

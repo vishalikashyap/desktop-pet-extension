@@ -5,6 +5,7 @@ const DEFAULTS = {
   pet: 'cat',
   size: 'medium',
   positionMode: 'bottom-left',
+  walkDirection: 'random',
   posX: null,
   posY: null,
   opacity: 1,
@@ -19,6 +20,7 @@ const DEFAULTS = {
 const enabledInput = document.getElementById('enabled');
 const petsContainer = document.getElementById('pets');
 const positionModeSelect = document.getElementById('positionMode');
+const walkDirectionSelect = document.getElementById('walkDirection');
 const sizeContainer = document.getElementById('size');
 const animationSpeedInput = document.getElementById('animationSpeed');
 const animationSpeedValue = document.getElementById('animationSpeedValue');
@@ -49,6 +51,7 @@ function render(settings) {
   });
 
   positionModeSelect.value = settings.positionMode;
+  walkDirectionSelect.value = settings.walkDirection;
 
   Array.from(sizeContainer.children).forEach((btn) => {
     btn.classList.toggle('dp-selected', btn.dataset.value === settings.size);
@@ -76,6 +79,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 
 enabledInput.addEventListener('change', () => set({ enabled: enabledInput.checked }));
 positionModeSelect.addEventListener('change', () => set({ positionMode: positionModeSelect.value }));
+walkDirectionSelect.addEventListener('change', () => set({ walkDirection: walkDirectionSelect.value }));
 
 Array.from(sizeContainer.children).forEach((btn) => {
   btn.addEventListener('click', () => set({ size: btn.dataset.value }));
