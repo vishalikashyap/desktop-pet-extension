@@ -1,0 +1,43 @@
+body {
+  font-family: system-ui, sans-serif;
+  width: 220px;
+  padding: 12px;
+}
+
+h1 {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.dp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dp-pets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.dp-pets button {
+  font-size: 22px;
+  padding: 6px 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.dp-pets button.dp-selected {
+  border-color: #4a7dff;
+  background: #e8efff;
+}
+
+.dp-hint {
+  font-size: 11px;
+  color: #777;
+  margin: 10px 0 0;
+}

@@ -1,0 +1,93 @@
+#dp-pet-root {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  width: 56px;
+  height: 56px;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+  transform: translate(0, 0) scaleX(1);
+  will-change: transform;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.35));
+}
+
+#dp-pet-root.dp-flip {
+  transform: scaleX(-1);
+}
+
+#dp-pet-root.dp-dragging {
+  cursor: grabbing;
+}
+
+#dp-pet-root.dp-walk {
+  animation: dp-bob 0.45s ease-in-out infinite;
+}
+
+#dp-pet-root.dp-idle {
+  animation: dp-idle-breathe 2.2s ease-in-out infinite;
+}
+
+#dp-pet-root.dp-sleep {
+  animation: none;
+  opacity: 0.85;
+}
+
+@keyframes dp-bob {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -6px; }
+}
+
+@keyframes dp-idle-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+#dp-footprint-layer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 56px;
+  z-index: 2147483646;
+  pointer-events: none;
+}
+
+.dp-footprint {
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+  opacity: 0.55;
+  transform-origin: center;
+  animation: dp-footprint-fade 2.4s ease-out forwards;
+}
+
+@keyframes dp-footprint-fade {
+  0% { opacity: 0.55; }
+  65% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+#dp-pet-root .dp-zzz {
+  position: absolute;
+  top: -18px;
+  right: -6px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#dp-pet-root.dp-sleep .dp-zzz {
+  opacity: 1;
+  animation: dp-zzz-float 1.8s ease-in-out infinite;
+}
+
+@keyframes dp-zzz-float {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-14px); opacity: 0; }
+}

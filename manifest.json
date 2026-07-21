@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Desktop Pet",
+  "version": "1.0.0",
+  "description": "A small animated pet that walks around your web pages.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Desktop Pet"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content-script.js"],
+      "css": ["content-style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
