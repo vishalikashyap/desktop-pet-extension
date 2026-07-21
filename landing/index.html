@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Desktop Pet — a little animated friend for your browser</title>
+    <meta name="description" content="Desktop Pet is a free browser extension that puts a small animated cat, dog, panda, rabbit, or fox on every page you visit — it walks, sleeps, dances, leaves footprints, and reacts when you click it." />
+    <link rel="icon" href="app/icons/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="dp-nav">
+      <div class="dp-nav-inner">
+        <span class="dp-nav-logo">
+          <img src="app/icons/icon-192.png" alt="" width="28" height="28" />
+          Desktop Pet
+        </span>
+        <a class="dp-nav-link" href="https://github.com/vishalikashyap/desktop-pet-extension" target="_blank" rel="noopener">Source on GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="dp-hero">
+        <div class="dp-hero-copy">
+          <h1>A tiny pet that lives on every page you browse.</h1>
+          <p>
+            Desktop Pet is a free, open-source browser extension. Pick a cat, dog,
+            panda, rabbit, or fox — it wanders your screen, sleeps, stretches,
+            dances, waves, and leaves little paw prints behind it. Drag it, click
+            it, or just let it live its life while you work.
+          </p>
+          <div class="dp-cta-row">
+            <a class="dp-btn dp-btn-primary" href="desktop-pet-extension.zip">⬇ Download for Chrome / Edge</a>
+            <a class="dp-btn dp-btn-secondary" href="app/" target="_blank" rel="noopener">📱 Open the mobile app</a>
+          </div>
+          <p class="dp-hero-hint">Free. No account, no tracking, no Chrome Web Store account needed to try it.</p>
+        </div>
+
+        <div class="dp-phone-frame" aria-label="Live interactive demo">
+          <div class="dp-phone-notch"></div>
+          <iframe
+            class="dp-phone-screen"
+            src="app/index.html"
+            title="Live Desktop Pet demo — drag, tap, and open the settings gear"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <p class="dp-demo-caption">👆 That's the real thing, running live — drag it, tap it, double-tap it, or open the ⚙️ settings.</p>
+
+      <section class="dp-features">
+        <h2>What it does</h2>
+        <div class="dp-grid">
+          <div class="dp-card">
+            <div class="dp-card-emoji">🐱🐶🐼🐰🦊</div>
+            <h3>Five pets to choose from</h3>
+            <p>Cat, dog, panda, rabbit, or fox — each hand-built as an animated SVG rig, not a static image.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">💃</div>
+            <h3>Eight living behaviors</h3>
+            <p>Walking, sleeping, sitting, looking around, stretching, jumping, waving, and dancing — picked at random so it never feels scripted.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">🐾</div>
+            <h3>Footprint trail</h3>
+            <p>Leaves a fading trail of paw prints behind it as it walks — wherever it roams on the page.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">❤️</div>
+            <h3>Reacts to you</h3>
+            <p>Hover for a smile, click for a heart, double-click for a dance, or drag it anywhere on the page.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">💬</div>
+            <h3>Speech bubbles</h3>
+            <p>Drops the occasional friendly reminder — "drink water", "keep coding" — at a frequency you control.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">🔊</div>
+            <h3>Its own little voice</h3>
+            <p>Each species makes a short synthesized sound, generated on the fly — no audio files required.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">📍</div>
+            <h3>Lives where you want</h3>
+            <p>Pin it to a corner, or let it free-roam and drag it anywhere — its spot is remembered.</p>
+          </div>
+          <div class="dp-card">
+            <div class="dp-card-emoji">🎛️</div>
+            <h3>Fully customizable</h3>
+            <p>Size, animation speed, opacity, sound, theme, walk direction, and speech frequency, all from one settings panel.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dp-install">
+        <h2>Install it (takes under a minute)</h2>
+        <ol class="dp-steps">
+          <li><strong>Download</strong> the zip above and unzip it anywhere.</li>
+          <li>Open <code>chrome://extensions</code> (or <code>edge://extensions</code>).</li>
+          <li>Turn on <strong>Developer mode</strong> (top-right toggle).</li>
+          <li>Click <strong>Load unpacked</strong> and select the unzipped folder.</li>
+          <li>Open any website — your pet is already there.</li>
+        </ol>
+        <p class="dp-install-note">
+          Not yet on the Chrome Web Store, so this manual step is required —
+          it's the same "Developer mode" flow used by any unpublished extension,
+          and Chrome will remember it until you remove the extension yourself.
+        </p>
+      </section>
+
+      <section class="dp-mobile">
+        <h2>On your phone</h2>
+        <p>
+          There's no equivalent of a browser extension on mobile, so the phone
+          version is a standalone installable web app instead. Open
+          <a href="app/">the mobile app</a> on your phone and use your browser's
+          <strong>"Add to Home Screen"</strong> option — it'll behave like a real
+          app icon, working offline once installed.
+        </p>
+      </section>
+    </main>
+
+    <footer class="dp-footer">
+      <p>Desktop Pet — built with plain HTML/CSS/JS, no build step, no tracking. <a href="https://github.com/vishalikashyap/desktop-pet-extension" target="_blank" rel="noopener">View the source</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,10 +1,19 @@
-name: Deploy PWA to GitHub Pages
+name: Deploy site to GitHub Pages
 
 on:
   push:
     branches: [main]
     paths:
+      - 'landing/**'
       - 'mobile-app/**'
+      - 'manifest.json'
+      - 'background.js'
+      - 'content-script.js'
+      - 'content-style.css'
+      - 'pet-rig.js'
+      - 'popup.html'
+      - 'popup.css'
+      - 'popup.js'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
@@ -25,8 +34,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          set -e
+          mkdir -p dist/app
+          cp -r landing/. dist/
+          cp -r mobile-app/. dist/app/
+          zip -r dist/desktop-pet-extension.zip \
+            manifest.json background.js content-script.js content-style.css \
+            pet-rig.js popup.html popup.css popup.js README.md
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: mobile-app
+          path: dist
+
       - id: deployment
         uses: actions/deploy-pages@v4
