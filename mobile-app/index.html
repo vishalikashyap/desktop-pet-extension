@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>Desktop Pet</title>
+    <meta name="theme-color" content="#e8a750" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <button id="dp-gear" title="Settings" aria-label="Settings">⚙️</button>
+
+    <div id="dp-sheet-backdrop"></div>
+    <div id="dp-sheet">
+      <div class="dp-sheet-handle"></div>
+      <h1>Desktop Pet</h1>
+
+      <label class="dp-row">
+        <span>Enabled</span>
+        <input type="checkbox" id="enabled" />
+      </label>
+
+      <div class="dp-section">
+        <div class="dp-label">Pet</div>
+        <div class="dp-pets" id="pets"></div>
+      </div>
+
+      <div class="dp-section">
+        <div class="dp-label">Position</div>
+        <select id="positionMode">
+          <option value="bottom-left">Bottom left</option>
+          <option value="bottom-right">Bottom right</option>
+          <option value="top-left">Top left</option>
+          <option value="top-right">Top right</option>
+          <option value="free">Free drag anywhere</option>
+        </select>
+      </div>
+
+      <div class="dp-section">
+        <div class="dp-label">Walk direction</div>
+        <select id="walkDirection">
+          <option value="random">Random</option>
+          <option value="ltr">Left → Right</option>
+          <option value="rtl">Right → Left</option>
+        </select>
+      </div>
+
+      <div class="dp-section">
+        <div class="dp-label">Size</div>
+        <div class="dp-segmented" id="size">
+          <button data-value="small">Small</button>
+          <button data-value="medium">Medium</button>
+          <button data-value="large">Large</button>
+        </div>
+      </div>
+
+      <div class="dp-section">
+        <div class="dp-row-tight">
+          <span>Animation speed</span>
+          <span class="dp-value" id="animationSpeedValue">1.0x</span>
+        </div>
+        <input type="range" id="animationSpeed" min="0.5" max="2" step="0.1" />
+      </div>
+
+      <div class="dp-section">
+        <div class="dp-row-tight">
+          <span>Opacity</span>
+          <span class="dp-value" id="opacityValue">100%</span>
+        </div>
+        <input type="range" id="opacity" min="0.4" max="1" step="0.05" />
+      </div>
+
+      <label class="dp-row">
+        <span>Sound</span>
+        <input type="checkbox" id="soundEnabled" />
+      </label>
+
+      <div class="dp-section">
+        <div class="dp-label">Theme</div>
+        <select id="theme">
+          <option value="auto">Auto</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+
+      <label class="dp-row">
+        <span>Speech bubbles</span>
+        <input type="checkbox" id="speechEnabled" />
+      </label>
+
+      <div class="dp-section">
+        <div class="dp-label">Speech frequency</div>
+        <select id="speechFrequency">
+          <option value="rare">Rare</option>
+          <option value="normal">Normal</option>
+          <option value="frequent">Frequent</option>
+        </select>
+      </div>
+
+      <button class="dp-reset" id="reset">Reset to defaults</button>
+      <button class="dp-close" id="dp-sheet-close">Done</button>
+    </div>
+
+    <script src="pet-rig.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
