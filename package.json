@@ -1,0 +1,10 @@
+{
+  "name": "desktop-pet-extension",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1"
+  }
+}
